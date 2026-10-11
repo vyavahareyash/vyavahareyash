@@ -204,8 +204,4 @@
     <img src="https://img.shields.io/badge/CONNECT-LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white&labelColor=0F172A" alt="LinkedIn" />
   </a>
 
-  <br/><br/>
-
-  <sub>⚡ <em>Engineering resilient agent architectures & intelligent systems.</em></sub>
-
 </div>
