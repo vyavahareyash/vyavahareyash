@@ -174,8 +174,17 @@
 
 <br/><br/>
 
-<img src="https://github-readme-stats.vercel.app/api?username=vyavahareyash&show_icons=true&theme=github_dark&hide_border=true&count_private=true&include_all_commits=true" height="155" />
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=vyavahareyash&theme=github-dark-blue&hide_border=true" height="155" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=vyavahareyash&show_icons=true&theme=github_dark&hide_border=true&count_private=true&include_all_commits=true" />
+  <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api?username=vyavahareyash&show_icons=true&theme=default&hide_border=true&count_private=true&include_all_commits=true" />
+  <img src="https://github-readme-stats.vercel.app/api?username=vyavahareyash&show_icons=true&theme=github_dark&hide_border=true&count_private=true&include_all_commits=true" height="155" />
+</picture>
+&nbsp;
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-streak-stats.herokuapp.com/?user=vyavahareyash&theme=github-dark-blue&hide_border=true" />
+  <source media="(prefers-color-scheme: light)" srcset="https://github-readme-streak-stats.herokuapp.com/?user=vyavahareyash&theme=default&hide_border=true" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=vyavahareyash&theme=github-dark-blue&hide_border=true" height="155" />
+</picture>
 
 </div>
 
@@ -188,11 +197,11 @@
 <div align="center">
 
   <a href="mailto:mail.vyavahare.yash@gmail.com">
-    <img src="https://img.shields.io/badge/GET_IN_TOUCH-mail.vyavahare.yash%40gmail.com-00E5FF?style=flat-square&labelColor=0A0E17" alt="Contact Email" />
+    <img src="https://img.shields.io/badge/GET_IN_TOUCH-mail.vyavahare.yash%40gmail.com-0078D4?style=flat-square&logo=gmail&logoColor=white&labelColor=0F172A" alt="Contact Email" />
   </a>
   &nbsp;&nbsp;
   <a href="https://linkedin.com/in/yash-vyavahare/">
-    <img src="https://img.shields.io/badge/CONNECT-LinkedIn-0077B5?style=flat-square&labelColor=0A0E17&logo=linkedin&logoColor=white" alt="LinkedIn" />
+    <img src="https://img.shields.io/badge/CONNECT-LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white&labelColor=0F172A" alt="LinkedIn" />
   </a>
 
   <br/><br/>
