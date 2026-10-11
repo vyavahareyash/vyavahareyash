@@ -1,0 +1,11 @@
+<svg width="900" height="12" viewBox="0 0 900 12" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00E5FF"/>
+      <stop offset="100%" stop-color="#0078D4"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="12" fill="transparent"/>
+  <rect x="0" y="5" width="120" height="2" rx="1" fill="url(#accent)"/>
+  <rect x="128" y="5.5" width="772" height="1" fill="#1E293B"/>
+</svg>

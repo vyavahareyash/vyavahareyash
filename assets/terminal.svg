@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 300" width="860" height="300">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&amp;display=swap');
+      .mono { font-family: 'JetBrains Mono', monospace; font-size: 13px; }
+      .dim { fill: #475569; }
+      .prompt { fill: #38BDF8; font-weight: 600; }
+      .cmd { fill: #F1F5F9; }
+      .key { fill: #818CF8; }
+      .val { fill: #34D399; }
+      .str { fill: #FDE047; }
+      .blink { animation: blink 1s steps(1) infinite; }
+      @keyframes blink { 50% { opacity: 0; } }
+    </style>
+  </defs>
+
+  <!-- Window Container -->
+  <rect width="860" height="300" rx="10" fill="#090D16" stroke="#1E293B" stroke-width="1.2"/>
+
+  <!-- Titlebar -->
+  <path d="M 0 10 C 0 4.5 4.5 0 10 0 L 850 0 C 855.5 0 860 4.5 860 10 L 860 38 L 0 38 Z" fill="#0F172A"/>
+  <circle cx="22" cy="19" r="6" fill="#EF4444"/>
+  <circle cx="42" cy="19" r="6" fill="#F59E0B"/>
+  <circle cx="62" cy="19" r="6" fill="#10B981"/>
+  <text x="430" y="24" text-anchor="middle" class="mono" font-size="12" fill="#64748B">yash@frontier-node: ~/profile</text>
+
+  <!-- Terminal Content -->
+  <g transform="translate(24, 70)">
+    <!-- Command 1 -->
+    <text x="0" y="0" class="mono"><tspan class="prompt">$ </tspan><tspan class="cmd">curl -s https://api.yash.dev/telemetry | jq .</tspan></text>
+    
+    <!-- JSON Output -->
+    <text x="0" y="26" class="mono"><tspan class="dim">{</tspan></text>
+    <text x="20" y="48" class="mono"><tspan class="key">"engineer"</tspan><tspan class="dim">: </tspan><tspan class="str">"Yash Vyavahare"</tspan><tspan class="dim">,</tspan></text>
+    <text x="20" y="70" class="mono"><tspan class="key">"organization"</tspan><tspan class="dim">: </tspan><tspan class="str">"UBS"</tspan><tspan class="dim">, </tspan><tspan class="key">"domain"</tspan><tspan class="dim">: </tspan><tspan class="str">"Applied GenAI &amp; RegTech"</tspan><tspan class="dim">,</tspan></text>
+    <text x="20" y="92" class="mono"><tspan class="key">"past_research"</tspan><tspan class="dim">: </tspan><tspan class="str">"Space Applications Centre, ISRO"</tspan><tspan class="dim">,</tspan></text>
+    <text x="20" y="114" class="mono"><tspan class="key">"awards"</tspan><tspan class="dim">: [</tspan><tspan class="str">"NASA Space Apps Winner"</tspan><tspan class="dim">, </tspan><tspan class="str">"UBS Tech Unleashed Leader's Choice"</tspan><tspan class="dim">],</tspan></text>
+    <text x="20" y="136" class="mono"><tspan class="key">"primary_stack"</tspan><tspan class="dim">: [</tspan><tspan class="val">"Python"</tspan><tspan class="dim">, </tspan><tspan class="val">"Azure OpenAI"</tspan><tspan class="dim">, </tspan><tspan class="val">"LangChain"</tspan><tspan class="dim">, </tspan><tspan class="val">"PyTorch/ViT"</tspan><tspan class="dim">],</tspan></text>
+    <text x="20" y="158" class="mono"><tspan class="key">"shipping_status"</tspan><tspan class="dim">: </tspan><tspan class="val">"building_production_agents"</tspan></text>
+    <text x="0" y="180" class="mono"><tspan class="dim">}</tspan></text>
+
+    <!-- Command 2 prompt with blinking cursor -->
+    <text x="0" y="206" class="mono"><tspan class="prompt">$ </tspan><tspan class="cmd">inspect --repo openrouter-tracker</tspan><tspan class="prompt blink">_</tspan></text>
+  </g>
+</svg>
