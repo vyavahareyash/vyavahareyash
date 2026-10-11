@@ -5,7 +5,6 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/yash-vyavahare/)
 [![GitHub](https://img.shields.io/badge/GitHub-vyavahareyash-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/vyavahareyash)
 [![Email](https://img.shields.io/badge/Email-mail.vyavahare.yash%40gmail.com-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:mail.vyavahare.yash@gmail.com)
-[![Profile Views](https://komarev.com/ghpvc/?username=vyavahareyash&color=58A6FF&style=flat-square&label=VIEWS)](https://github.com/vyavahareyash)
 
 </div>
 
