@@ -53,6 +53,22 @@
 <tr>
 <td width="50%" valign="top">
 
+### 💬 [whatsapp-total-recall](https://github.com/vyavahareyash/whatsapp-total-recall)
+*Zero-cost, privacy-first conversational intelligence engine & MCP server for WhatsApp.*
+
+- 🔍 Hybrid retrieval (BM25 + sqlite-vec RRF) over local chat history
+- 💬 Rebuilds reply DAGs & conversational episodes with zero cloud egress
+- 🔌 Native Model Context Protocol (MCP) server & macOS menu bar app
+
+<img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" /> <img src="https://img.shields.io/badge/MCP-4B32C3?style=flat-square&logoColor=white" /> <img src="https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white" />
+
+<br/>
+
+[**Repo ↗**](https://github.com/vyavahareyash/whatsapp-total-recall)
+
+</td>
+<td width="50%" valign="top">
+
 ### ⚡ [openrouter-tracker](https://github.com/vyavahareyash/openrouter-tracker)
 *Real-time token, credit, and latency tracker for multi-model LLM deployments via OpenRouter.*
 
@@ -67,6 +83,8 @@
 [**Repo ↗**](https://github.com/vyavahareyash/openrouter-tracker)
 
 </td>
+</tr>
+<tr>
 <td width="50%" valign="top">
 
 ### 💰 [cashflow](https://github.com/vyavahareyash/cashflow)
@@ -83,8 +101,6 @@
 [**Repo ↗**](https://github.com/vyavahareyash/cashflow)
 
 </td>
-</tr>
-<tr>
 <td width="50%" valign="top">
 
 ### 🧠 AI-Architect
@@ -99,22 +115,6 @@
 <br/>
 
 <img src="https://img.shields.io/badge/Status-UBS_Internal_Project-0078D4?style=flat-square" />
-
-</td>
-<td width="50%" valign="top">
-
-### 🛰️ Deforestation Detection System
-*NASA Space Apps Challenge Hackathon Winner · Satellite Remote Sensing.*
-
-- 🌲 ML model trained on multi-temporal satellite imagery
-- 🔄 Pixel-wise change detection algorithms for deforestation hotspots
-- 🛰️ Benchmarked for automated canopy monitoring & alerting
-
-<img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" /> <img src="https://img.shields.io/badge/Computer_Vision-7C3AED?style=flat-square&logoColor=white" /> <img src="https://img.shields.io/badge/NASA_Space_Apps-0B3D91?style=flat-square&logo=nasa&logoColor=white" />
-
-<br/>
-
-<img src="https://img.shields.io/badge/Status-Hackathon_Prototype-7C3AED?style=flat-square" />
 
 </td>
 </tr>
@@ -140,6 +140,7 @@
 ## 🛠️ Tech Stack
 
 **🤖 GenAI & Agents**
+![Model Context Protocol](https://img.shields.io/badge/MCP-4B32C3?style=flat-square&logoColor=white)
 ![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white)
 ![Azure OpenAI](https://img.shields.io/badge/Azure_OpenAI-0078D4?style=flat-square&logo=microsoft-azure&logoColor=white)
 ![RAG](https://img.shields.io/badge/Advanced_RAG-7C3AED?style=flat-square&logoColor=white)
