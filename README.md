@@ -103,18 +103,18 @@
 </td>
 <td width="50%" valign="top">
 
-### 🧠 AI-Architect
-*Hackathon Winner @ UBS · Automated code-to-architecture engine.*
+### 🔊 [outloud](https://github.com/vyavahareyash/outloud)
+*Local neural text-to-speech Chrome extension powered by Ollama & Phonon.*
 
-- 📐 Parses repo AST and codebase files to produce system diagrams
-- 🗣️ Natural language prompt → complete visual system topology
-- ⚡ Accelerated onboarding & architecture review cycles
+- 🔒 100% offline & private speech synthesis running against local Ollama
+- ⚡ Low-latency streaming via sentence boundary segmentation & Web Audio
+- 🎯 Isolated Shadow DOM floating pill with instant playback controls
 
-<img src="https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white" /> <img src="https://img.shields.io/badge/Azure_OpenAI-0078D4?style=flat-square&logo=microsoft-azure&logoColor=white" /> <img src="https://img.shields.io/badge/GitLab-FC6D26?style=flat-square&logo=gitlab&logoColor=white" />
+<img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white" /> <img src="https://img.shields.io/badge/Chrome_Extension-4285F4?style=flat-square&logo=googlechrome&logoColor=white" /> <img src="https://img.shields.io/badge/Ollama-000000?style=flat-square&logo=ollama&logoColor=white" />
 
 <br/>
 
-<img src="https://img.shields.io/badge/Status-UBS_Internal_Project-0078D4?style=flat-square" />
+[**Repo ↗**](https://github.com/vyavahareyash/outloud)
 
 </td>
 </tr>
