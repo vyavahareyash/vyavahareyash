@@ -182,9 +182,9 @@
 </picture>
 &nbsp;
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-streak-stats.herokuapp.com/?user=vyavahareyash&theme=github-dark-blue&hide_border=true" />
-  <source media="(prefers-color-scheme: light)" srcset="https://github-readme-streak-stats.herokuapp.com/?user=vyavahareyash&theme=default&hide_border=true" />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=vyavahareyash&theme=github-dark-blue&hide_border=true" height="155" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com/?user=vyavahareyash&theme=github-dark-blue&hide_border=true" />
+  <source media="(prefers-color-scheme: light)" srcset="https://streak-stats.demolab.com/?user=vyavahareyash&theme=default&hide_border=true" />
+  <img src="https://streak-stats.demolab.com/?user=vyavahareyash&theme=github-dark-blue&hide_border=true" height="155" />
 </picture>
 
 </div>
