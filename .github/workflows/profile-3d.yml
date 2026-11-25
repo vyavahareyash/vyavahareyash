@@ -24,8 +24,22 @@ jobs:
       - name: Generate 3D contribution graph
         uses: yoshi389111/github-profile-3d-contrib@0.7.1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
           USERNAME: ${{ github.repository_owner }}
+
+      - name: Generate streak stats (dark)
+        uses: DenverCoder1/github-readme-streak-stats@v1
+        with:
+          options: user=${{ github.repository_owner }}&theme=github-dark-blue&hide_border=true&disable_animations=true
+          path: profile-3d-contrib/streak-dark.svg
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Generate streak stats (light)
+        uses: DenverCoder1/github-readme-streak-stats@v1
+        with:
+          options: user=${{ github.repository_owner }}&theme=default&hide_border=true&disable_animations=true
+          path: profile-3d-contrib/streak-light.svg
+          token: ${{ secrets.GH_PAT }}
 
       - name: Deploy to output branch
         uses: crazy-max/ghaction-github-pages@v4
