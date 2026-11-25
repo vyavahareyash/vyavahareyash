@@ -2,7 +2,11 @@
      The contribution tile is rebuilt daily by .github/workflows/contributions.yml onto the `output` branch. -->
 <div align="center">
 
-<img src="./assets/header.svg" width="100%" alt="Yash Vyavahare, AI Engineer at UBS in Pune. I ship AI that runs in production and on your laptop: RAG and agent systems for risk and compliance at UBS, plus local-first tools on PyPI, Homebrew and the Chrome Web Store. Cut review time per risk issue from 3–4 weeks to 2–3 days; took an audit-response RAG assistant from proof of concept to production across 4 departments. Previously research at ISRO's Space Applications Centre." />
+<img src="./assets/header.svg" width="100%" alt="Yash Vyavahare, AI Engineer at UBS in Pune. I ship AI that runs in production and on your laptop: RAG and agent systems for risk and compliance at UBS, plus local-first tools on PyPI, Homebrew and the Chrome Web Store. Focus: production RAG for risk and compliance, agent systems with memory and context layers, local-first AI with MCP and on-device models. ID badge with an illustrated portrait; previously research at ISRO's Space Applications Centre." />
+
+<img src="./assets/label-impact.svg" width="100%" alt="Impact at UBS: read the case studies" />
+
+<a href="https://github.com/vyavahareyash/vyavahareyash/blob/main/work/risk-issue-assistant.md"><img src="./assets/impact-risk-issue.svg" width="50%" alt="UBS Risk Issue Assistant: about 10 times faster reviews, 3–4 weeks down to 2–3 days. Checks remediation claims against evidence buried in nested documents. Read the case study." /></a><a href="https://github.com/vyavahareyash/vyavahareyash/blob/main/work/audit-response-assistant.md"><img src="./assets/impact-audit-rag.svg" width="50%" alt="UBS Audit-Response Assistant: live in 4 departments, taken from pilot to production. Drafts evidence-linked audit answers from past responses and routes cases to experts. Read the case study." /></a>
 
 <img src="./assets/label-shipped.svg" width="100%" alt="Shipped: install it today" />
 

@@ -53,6 +53,93 @@ PROJECTS = [
     },
 ]
 
+FOCUS = [("Production RAG", "for risk & compliance"), ("Agent systems", "memory & context layers"),
+         ("Local-first AI", "MCP & on-device models")]
+
+IMPACT = [
+    {
+        "slug": "risk-issue",
+        "label": "UBS · RISK ISSUE ASSISTANT",
+        "headline": "~10× faster reviews",
+        "caption": "Checks remediation claims against evidence buried in nested documents.",
+        "picture": "bars",
+    },
+    {
+        "slug": "audit-rag",
+        "label": "UBS · AUDIT-RESPONSE ASSISTANT",
+        "headline": "Live in 4 departments",
+        "caption": "Drafts evidence-linked audit answers from past responses and routes cases to experts.",
+        "picture": "rollout",
+    },
+]
+
+REPO = "https://github.com/vyavahareyash/vyavahareyash/blob/main"
+CASE_STUDIES = [
+    {
+        "slug": "risk-issue-assistant",
+        "label": "case study · ubs · strategic risk management",
+        "title": "Risk Issue Assistant",
+        "subtitle": "An AI assistant that checks remediation claims against the evidence, "
+                    "so risk reviews take days instead of weeks.",
+        "headline": "~10× faster reviews",
+        "picture": "bars",
+        "pill": "UBS Outstanding Performer · 2026",
+        "glance": [("where", "UBS, Strategic Risk Management"),
+                   ("my role", "AI Engineer: requirements, architecture, build, delivery"),
+                   ("stack", "Python, Azure OpenAI, advanced RAG, LangChain"),
+                   ("recognition", "UBS Outstanding Performer, Aug 2026")],
+        "problem": "When a risk issue is raised, the team that owns it fixes it and submits a claim that it is "
+                   "resolved. Before the issue can be closed, a reviewer has to confirm the claim is backed by "
+                   "evidence. That evidence usually sits in nested documents: files embedded inside other files, "
+                   "in mixed formats. Finding and checking it by hand took 3–4 weeks per issue.",
+        "built": [("Parses nested and embedded files", "with multi-modal parsing, so evidence is found whatever format it is in."),
+                  ("Validates each remediation claim", "against the evidence it finds, and shows the evidence it relied on."),
+                  ("Automates the closure check", "that tells reviewers whether an issue looks ready to close.")],
+        "flow": ["Risk issue + remediation claim", "Parse nested and embedded documents", "Retrieve the relevant evidence",
+                 "LLM checks the claim against the evidence", "Reviewer sees a verdict with cited evidence"],
+        "results": [("3–4 wk → 2–3 d", "review time per issue"), ("Outstanding Performer", "UBS recognition, Aug 2026")],
+        "note": "Used by the non-technical risk reviewers it was built for.",
+        "worked": [("Discovery and design:", "partnered with risk and compliance experts to map the review process, gather "
+                                             "requirements and design the architecture; proposed improvements beyond scope."),
+                   ("Stakeholders:", "ran live demos for senior management and for the risk users."),
+                   ("Production delivery:", "shipped through code review, automated testing and CI/CD.")],
+        "links": [("← Profile", "", "https://github.com/vyavahareyash"),
+                  ("Award post", "↗", "https://lnkd.in/p/dvxQUTkz"),
+                  ("Next case", "→", f"{REPO}/work/audit-response-assistant.md")],
+    },
+    {
+        "slug": "audit-response-assistant",
+        "label": "case study · ubs · risk and compliance",
+        "title": "Audit-Response Assistant",
+        "subtitle": "A RAG assistant that drafts evidence-linked answers to audit requests, "
+                    "taken from proof of concept to production.",
+        "headline": "Live in 4 departments",
+        "picture": "rollout",
+        "pill": None,
+        "glance": [("where", "UBS, risk and compliance"),
+                   ("my role", "AI Engineer: proof of concept to production"),
+                   ("stack", "Python, Azure OpenAI, advanced RAG, LangChain")],
+        "problem": "Audit requests have to be answered with evidence. Many have been answered before in some form, "
+                   "but past answers and their supporting documents are spread across files, often embedded inside "
+                   "other files. Each new request meant searching that history by hand and working out which "
+                   "subject-matter expert should own it.",
+        "built": [("Parses embedded documents,", "so supporting material inside attachments is not missed."),
+                  ("Ranks similar past responses", "to find the most relevant answers already given."),
+                  ("Drafts a new answer linked to its evidence,", "so reviewers can check every claim at the source."),
+                  ("Routes each case", "to the right subject-matter expert.")],
+        "flow": ["Audit request", "Parse embedded documents", "Rank similar past responses",
+                 "Draft an answer linked to evidence", "Route to the right expert"],
+        "results": [("PoC → production", "now a live production system"), ("1 → 4 departments", "teams using it today")],
+        "note": None,
+        "worked": [("Requirements and architecture:", "worked with risk and compliance experts on both."),
+                   ("Production delivery:", "shipped through code review, automated testing and CI/CD.")],
+        "links": [("← Profile", "", "https://github.com/vyavahareyash"),
+                  ("Next case", "→", f"{REPO}/work/risk-issue-assistant.md")],
+    },
+]
+CASE_NOTE = ("Details are generalised for a public page: no internal data, system names beyond the project name, "
+             "or architecture specifics.")
+
 AWARDS = [
     ("2026", "UBS Outstanding Performer", "Risk Issue Assistant"),
     ("2025", "UBS Tech Unleashed, Leader's Choice", "AI-Architect"),
@@ -126,13 +213,18 @@ def header():
     # 3-column grid inside an 840-wide canvas with 6px transparent gutters
     col = 268
     hero_w, bx, by, bh = 2 * col + 12, 6 + 2 * col + 24, 6, 432
-    body = [tile(6, 6, hero_w, 300)]
+    body = [tile(6, 6, hero_w, bh)]  # hero matches the badge height; impact tiles are separate linked images
     body.append(text(38, 46, "yash vyavahare — ai engineer", 12, MUTED, MONO))
     for i, (line, color) in enumerate([("I ship AI that runs", TEXT), ("in production", TEXT),
                                        ("and on your laptop.", LIME)]):
-        body.append(text(38, 128 + i * 44, line, 40, color, weight=600, spacing=-1.2))
-    body.append(text(38, 256, "RAG and agent systems for risk & compliance at UBS.", 14, MUTED))
-    body.append(text(38, 278, "Local-first tools on PyPI, Homebrew and the Chrome Web Store.", 14, MUTED))
+        body.append(text(38, 136 + i * 44, line, 40, color, weight=600, spacing=-1.2))
+    body.append(text(38, 264, "RAG and agent systems for risk & compliance at UBS.", 14, MUTED))
+    body.append(text(38, 286, "Local-first tools on PyPI, Homebrew and the Chrome Web Store.", 14, MUTED))
+    body.append(f'<rect x="38" y="334" width="{hero_w - 64}" height="1" fill="{BORDER}"/>')
+    for i, (title, desc) in enumerate(FOCUS):  # "what I do" strip
+        x = 38 + i * 164
+        body.append(text(x, 370, title, 14, TEXT, weight=600))
+        body.append(text(x, 391, desc, 12, MUTED))
 
     # ID badge: lanyard slot is a real hole (mask) so the page shows through in light and dark mode
     portrait = data_uri(ASSETS / "src" / "portrait.jpg", 232, 236, quality=82)
@@ -151,21 +243,42 @@ def header():
     body.append(text(bx + 30, by + 396, "prev. ISRO SAC", 10, LIME, MONO))
     body.append(barcode(bx + 140, by + 381, 22))
 
-    metrics = [("3–4 wk → 2–3 d", ["Review time per risk issue,", "with the Risk Issue Assistant"]),
-               ("1 → 4 depts", ["Audit-response RAG, taken", "from PoC to production"])]
-    for i, (big, caption) in enumerate(metrics):
-        x, y = 6 + i * (col + 12), 318
-        body.append(tile(x, y, col, 120))
-        body.append(text(x + 22, y + 50, big, 28, weight=600, spacing=-0.6))
-        for j, line in enumerate(caption):
-            body.append(text(x + 22, y + 78 + j * 19, line, 13, MUTED))
-
     return svg(840, 444, "".join(body),
                "Yash Vyavahare, AI Engineer at UBS. I ship AI that runs in production and on your laptop.")
 
 
 def label(s):
     return svg(840, 44, text(10, 30, s, 12, MUTED, MONO), s)
+
+
+def impact(item):
+    """Half-width tile: what it is, one headline number, a tiny picture of the change, a link cue."""
+    lines = wrap(item["caption"], 52)
+    assert len(lines) <= 2, f"{item['slug']}: caption wraps to {len(lines)} lines"
+    body = [tile(6, 6, 408, 220), text(26, 40, item["label"], 11, MUTED, MONO),
+            text(26, 80, item["headline"], 28, weight=600, spacing=-0.6), item["picture"]]
+    body += [text(26, 158 + i * 19, line, 13, MUTED) for i, line in enumerate(lines)]
+    body.append(text(26, 206, "Read the case study ↗", 11, LIME, MONO))
+    return svg(420, 232, "".join(body), f"{item['label']}: {item['headline']}. {item['caption']} Read the case study.")
+
+
+def bars_picture(full=250):
+    """Before/after bars, lengths proportional to the midpoints (3.5 weeks vs 2.5 days)."""
+    after = round(full * 2.5 / 24.5)
+    return (text(26, 110, "before", 10, MUTED, MONO)
+            + f'<rect x="80" y="102" width="{full}" height="8" rx="4" fill="#33333D"/>'
+            + text(80 + full + 10, 110, "3–4 weeks", 10, MUTED, MONO)
+            + text(26, 130, "after", 10, MUTED, MONO)
+            + f'<rect x="80" y="122" width="{after}" height="8" rx="4" fill="{LIME}"/>'
+            + text(80 + after + 10, 130, "2–3 days", 10, TEXT, MONO))
+
+
+def rollout_picture():
+    """One pilot block, then four lit blocks: pilot to production in 4 departments."""
+    blocks = (f'<rect x="26" y="100" width="22" height="22" rx="5" fill="none" stroke="{LIME}" stroke-width="1.5"/>'
+              + text(60, 116, "→", 14, MUTED)
+              + "".join(f'<rect x="{82 + i * 30}" y="100" width="22" height="22" rx="5" fill="{LIME}"/>' for i in range(4)))
+    return blocks + text(212, 116, "pilot → production", 10, MUTED, MONO)
 
 
 # ---------- project banner art (408x166, local coords; flat shapes, one lime accent) ----------
@@ -342,9 +455,136 @@ def recognition_and_stack():
     return svg(840, 242, "".join(body), alt)
 
 
-def contact(name):
-    body = tile(6, 6, 408, 68) + text(30, 47, name, 18, weight=500) + text(390, 47, "↗", 18, LIME, anchor="end")
-    return svg(420, 80, body, name)
+def contact(name, arrow="↗", w=420):
+    body = tile(6, 6, w - 12, 68) + text(30, 47, name, 18, weight=500) + text(w - 30, 47, arrow, 18, LIME, anchor="end")
+    return svg(w, 80, body, name)
+
+
+# ---------- case-study pages (full-width tiles, 780px of text width inside an 828 card) ----------
+
+def bold_lead_line(x, y, line, lead, size=14):
+    """A text line whose leading phrase is bold white and the rest muted."""
+    rest = line[len(lead):] if line.startswith(lead) else line
+    head = f'<tspan font-weight="600" fill="{TEXT}">{escape(lead)}</tspan>' if line.startswith(lead) else ""
+    return f'<text x="{x}" y="{y}" font-family="{SANS}" font-size="{size}" fill="{MUTED}">{head}{escape(rest)}</text>'
+
+
+def card(h, body, label_text):
+    return svg(840, h + 12, tile(6, 6, 828, h) + text(30, 44, label_text, 12, MUTED, MONO) + body, label_text)
+
+
+def cs_hero(cs, picture):
+    lines = wrap(cs["subtitle"], 92)
+    assert len(lines) <= 2, f"{cs['slug']}: subtitle wraps to {len(lines)} lines"
+    body = [tile(6, 6, 828, 300), text(30, 44, cs["label"], 12, MUTED, MONO),
+            text(30, 100, cs["title"], 40, weight=600, spacing=-1.2)]
+    body += [text(30, 136 + i * 22, line, 15, MUTED) for i, line in enumerate(lines)]
+    body.append(f'<rect x="30" y="192" width="780" height="1" fill="{BORDER}"/>')
+    body.append(text(30, 236, cs["headline"], 28, weight=600, spacing=-0.6))
+    body.append(f'<g transform="translate(4 152)">{picture}</g>')
+    if cs["pill"]:
+        w = round(len(cs["pill"]) * 6.7 + 28)
+        body.append(f'<rect x="{810 - w}" y="212" width="{w}" height="30" rx="15" fill="none" stroke="{LIME}"/>'
+                    + text(810 - w + 14, 231, cs["pill"], 11, LIME, MONO))
+    return svg(840, 312, "".join(body), f"{cs['title']}: {cs['subtitle']} {cs['headline']}.")
+
+
+def cs_glance(items):
+    colw = 780 / len(items)
+    body, deepest = [], 1
+    for i, (key, value) in enumerate(items):
+        x = 30 + i * colw
+        lines = wrap(value, int(colw / 6.8) - 1)
+        deepest = max(deepest, len(lines))
+        body.append(text(x, 44, key, 11, MUTED, MONO))
+        body += [text(x, 70 + j * 20, line, 13, TEXT) for j, line in enumerate(lines)]
+    h = 70 + (deepest - 1) * 20 + 22
+    alt = "At a glance: " + "; ".join(f"{k}: {v}" for k, v in items) + "."
+    return svg(840, h + 12, tile(6, 6, 828, h) + "".join(body), alt)
+
+
+def cs_text(label_text, paragraph=None, bullets=None):
+    body, y = [], 74
+    if paragraph:
+        for line in wrap(paragraph, 100):
+            body.append(text(30, y, line, 14, TEXT))
+            y += 22
+    for lead, rest in bullets or []:
+        body.append(f'<rect x="30" y="{y - 9}" width="6" height="6" rx="1.5" fill="{LIME}"/>')
+        for j, line in enumerate(wrap(f"{lead} {rest}", 94)):
+            body.append(bold_lead_line(46, y, line, lead) if j == 0 else text(46, y, line, 14, MUTED))
+            y += 22
+        y += 8
+    h = y - 22 + 26 - (8 if bullets else 0)
+    words = paragraph or " ".join(f"{lead} {rest}" for lead, rest in bullets)
+    return svg(840, h + 12, tile(6, 6, 828, h) + text(30, 44, label_text, 12, MUTED, MONO) + "".join(body),
+               f"{label_text.capitalize().replace(' i ', ' I ')}: {words}")
+
+
+def cs_flow(steps):
+    n, gap, top, bh = len(steps), 30, 66, 78
+    bw = (780 - (n - 1) * gap) / n
+    body = [ART_CSS]
+    for i, step in enumerate(steps):
+        x, last = 30 + i * (bw + gap), i == n - 1
+        lines = wrap(step, int(bw / 6.6))
+        assert len(lines) <= 3, f"flow step too long: {step}"
+        body.append(f'<rect x="{x}" y="{top}" width="{bw}" height="{bh}" rx="12" fill="{CARD}" '
+                    f'stroke="{LIME if last else EDGE}" stroke-width="{1.5 if last else 1}"/>')
+        y0 = top + bh / 2 - (len(lines) - 1) * 9 + 4
+        body += [text(x + bw / 2, y0 + j * 18, line, 12, TEXT, anchor="middle") for j, line in enumerate(lines)]
+        if not last:
+            ay = top + bh / 2
+            body.append(f'<line x1="{x + bw + 4}" y1="{ay}" x2="{x + bw + gap - 8}" y2="{ay}" stroke="{MUTED}" '
+                        f'stroke-width="1.5" class="flow"/>'
+                        f'<path d="M{x + bw + gap - 9} {ay - 4}L{x + bw + gap - 4} {ay}L{x + bw + gap - 9} {ay + 4}Z" fill="{MUTED}"/>')
+    h = top + bh + 22
+    return svg(840, h + 12, tile(6, 6, 828, h) + text(30, 44, "how it works", 12, MUTED, MONO) + "".join(body),
+               "How it works: " + " → ".join(steps) + ".")
+
+
+def cs_results(items, note):
+    colw = 780 / len(items)
+    body = []
+    for i, (value, caption) in enumerate(items):
+        x = 30 + i * colw
+        body.append(text(x, 90, value, 28, weight=600, spacing=-0.6))
+        body.append(text(x, 114, caption, 13, MUTED))
+    h = 140
+    if note:
+        body.append(f'<rect x="30" y="138" width="780" height="1" fill="{BORDER}"/>' + text(30, 168, note, 14, TEXT))
+        h = 192
+    alt = "Results: " + "; ".join(f"{v}, {c}" for v, c in items) + (f". {note}" if note else ".")
+    return svg(840, h + 12, tile(6, 6, 828, h) + text(30, 44, "results", 12, MUTED, MONO) + "".join(body), alt)
+
+
+def case_study(cs):
+    """Returns ({asset path: svg}, markdown page) for one case study."""
+    pictures = {"bars": bars_picture, "rollout": rollout_picture}
+    s = cs["slug"]
+    tiles = {
+        f"work/{s}-hero.svg": cs_hero(cs, pictures[cs["picture"]]()),
+        f"work/{s}-glance.svg": cs_glance(cs["glance"]),
+        f"work/{s}-problem.svg": cs_text("the problem", paragraph=cs["problem"]),
+        f"work/{s}-built.svg": cs_text("what i built", bullets=cs["built"]),
+        f"work/{s}-flow.svg": cs_flow(cs["flow"]),
+        f"work/{s}-results.svg": cs_results(cs["results"], cs["note"]),
+        f"work/{s}-worked.svg": cs_text("how i worked", bullets=cs["worked"]),
+    }
+    w = 840 // len(cs["links"])
+    for i, (name, arrow, _) in enumerate(cs["links"]):
+        tiles[f"work/{s}-link-{i}.svg"] = contact(name, arrow, w)
+
+    def alt(path):
+        return escape(ElementTree.fromstring(tiles[path]).get("aria-label"))
+
+    images = "\n\n".join(f'<img src="../assets/{p}" width="100%" alt="{alt(p)}" />'
+                         for p in tiles if "-link-" not in p)
+    links = "".join(f'<a href="{url}"><img src="../assets/work/{s}-link-{i}.svg" width="{100 / len(cs["links"]):.2f}%" '
+                    f'alt="{escape(name)}" /></a>' for i, (name, _, url) in enumerate(cs["links"]))
+    page = (f"<!-- Generated by scripts/build_assets.py: edit CASE_STUDIES there, then re-run. -->\n"
+            f'<div align="center">\n\n{images}\n\n{links}\n\n<sub>{escape(CASE_NOTE)}</sub>\n\n</div>\n')
+    return tiles, page
 
 
 # ---------- build ----------
@@ -352,18 +592,29 @@ def contact(name):
 def main():
     outputs = {
         "header.svg": header(),
+        "label-impact.svg": label("impact at ubs / read the case studies"),
         "label-shipped.svg": label("shipped / install it today"),
         "recognition.svg": recognition_and_stack(),
         "contact-email.svg": contact("Email"),
         "contact-linkedin.svg": contact("LinkedIn"),
     }
+    pictures = {"bars": bars_picture, "rollout": rollout_picture}
+    for item in IMPACT:
+        outputs[f"impact-{item['slug']}.svg"] = impact({**item, "picture": pictures[item["picture"]]()})
     for p in PROJECTS:
         outputs[f"project-{p['slug']}.svg"] = project(p)
 
+    for cs in CASE_STUDIES:
+        tiles, page = case_study(cs)
+        outputs.update(tiles)
+        (ROOT / "work").mkdir(exist_ok=True)
+        (ROOT / "work" / f"{cs['slug']}.md").write_text(page, encoding="utf-8")
+
+    (ASSETS / "work").mkdir(exist_ok=True)
     for name, content in outputs.items():
         ElementTree.fromstring(content)  # self-check: every tile must be well-formed XML
         (ASSETS / name).write_text(content, encoding="utf-8")
-        print(f"{name:32} {len(content) / 1024:6.1f} KB")
+        print(f"{name:44} {len(content) / 1024:6.1f} KB")
 
 
 if __name__ == "__main__":
