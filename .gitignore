@@ -3,3 +3,10 @@
 .AppleDouble
 .LSOverride
 ._*
+
+# Python
+__pycache__/
+*.pyc
+
+# Contribution tile build output (CI publishes it to the `output` branch)
+out/

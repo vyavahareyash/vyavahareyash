@@ -1,0 +1,33 @@
+name: Contribution tile
+
+on:
+  schedule: # 18:00 UTC = 23:30 IST daily
+    - cron: "0 18 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build contribution tile
+        run: python3 scripts/build_contributions.py out/contributions.svg
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+          GH_LOGIN: ${{ github.repository_owner }}
+
+      - name: Deploy to output branch
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: out
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
