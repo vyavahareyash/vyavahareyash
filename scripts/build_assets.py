@@ -51,6 +51,13 @@ PROJECTS = [
         "desc": "Native desktop widget for OpenRouter credits, spend velocity and rate limits.",
         "pill": "brew install vyavahareyash/tap/openrouter-tracker",
     },
+    {
+        "slug": "timezone",
+        "name": "Timezone",
+        "tag": "Homebrew",
+        "desc": "Menu bar app for meeting times. Each city is a strip coloured like its sky.",
+        "pill": "brew install vyavahareyash/tap/timezone",
+    },
 ]
 
 FOCUS = [("Production RAG", "for risk & compliance"), ("Agent systems", "memory & context layers"),
@@ -298,6 +305,8 @@ ART_CSS = f"""<style>
 @keyframes spin{{to{{transform:rotate(360deg)}}}}
 .gauge{{animation:gauge 1.6s ease-out both}}
 @keyframes gauge{{from{{stroke-dashoffset:213.6}}}}
+.slide{{animation:slide 4s ease-in-out infinite alternate}}
+@keyframes slide{{to{{transform:translateX(70px)}}}}
 @media (prefers-reduced-motion:reduce){{*{{animation:none!important}}}}
 </style>"""
 
@@ -402,8 +411,41 @@ def art_openrouter_tracker():
         f'<circle cx="284" cy="44" r="8" fill="none" stroke="{MUTED}" stroke-width="2" stroke-dasharray="38 12"/>')
 
 
+def art_timezone():
+    """Menu bar, then the panel: three cities as day strips (night grey, lime dawn and dusk, lighter day), offset by
+    their time zones, and one white bead (the same moment) sliding across all three."""
+    keys = [(0, "#2A2A33"), (5, "#2A2A33"), (7, LIME), (9.5, "#6A6A78"), (16.5, "#6A6A78"), (19, LIME),
+            (21, "#2A2A33"), (24, "#2A2A33")]
+
+    def sky(hour):
+        for (h0, c0), (h1, c1) in zip(keys, keys[1:]):
+            if h0 <= hour <= h1:
+                t = (hour - h0) / (h1 - h0)
+                return "#" + "".join(f"{round(int(c0[i:i + 2], 16) * (1 - t) + int(c1[i:i + 2], 16) * t):02X}"
+                                     for i in (1, 3, 5))
+
+    x0, width, now = 120, 168, 0.42
+    out = [f'<rect x="0" y="0" width="408" height="12" fill="{CARD}"/>'
+           + "".join(f'<rect x="{x}" y="4" width="{w}" height="4" rx="2" fill="{DIM}"/>'
+                     for x, w in ((14, 10), (32, 22), (60, 18), (348, 14), (368, 26)))
+           + f'<rect x="318" y="1" width="20" height="10" rx="3" fill="{EDGE}"/>'
+           f'<circle cx="328" cy="6" r="3.2" fill="none" stroke="{TEXT}" stroke-width="1.2"/>'
+           f'<rect x="104" y="24" width="200" height="126" rx="18" fill="{SHAPE}" stroke="{EDGE}" stroke-width="2"/>']
+    beads = []
+    for i, (offset, label_w) in enumerate(((0, 40), (-4.5, 30), (7.5, 48))):
+        top = 42 + i * 36
+        stops = "".join(f'<stop offset="{q / 24:.3f}" stop-color="{sky((q + offset) % 24)}"/>' for q in range(25))
+        out.append(f'<defs><linearGradient id="tz{i}">{stops}</linearGradient></defs>'
+                   f'<rect x="{x0}" y="{top}" width="{label_w}" height="4" rx="2" fill="{MUTED}"/>'
+                   f'<rect x="{x0 + width - 30}" y="{top - 2}" width="30" height="7" rx="3.5" fill="{TEXT}"/>'
+                   f'<rect x="{x0}" y="{top + 10}" width="{width}" height="10" rx="5" fill="url(#tz{i})"/>')
+        beads.append(f'<rect x="{x0 + width * now - 3:.1f}" y="{top + 10}" width="6" height="10" rx="3" fill="{TEXT}"/>'
+                     f'<rect x="{x0 + width * now - 0.75:.1f}" y="{top + 12}" width="1.5" height="6" rx=".75" fill="{INK}"/>')
+    return "".join(out) + f'<g class="slide">{"".join(beads)}</g>'
+
+
 ART = {"total-recall": art_total_recall, "outloud": art_outloud,
-       "cashflow": art_cashflow, "openrouter-tracker": art_openrouter_tracker}
+       "cashflow": art_cashflow, "openrouter-tracker": art_openrouter_tracker, "timezone": art_timezone}
 
 
 def project(p):
